@@ -1,3 +1,7 @@
+const Vote = require('./resolvers/Vote')
+
+const Subscription = require('./resolvers/Subscription')
+
 const Query = require('./resolvers/Query')
 const Mutation = require('./resolvers/Mutation')
 const User = require('./resolvers/User')
@@ -14,8 +18,10 @@ const { PrismaClient } = require('@prisma/client');
 const resolvers = {
   Query,
   Mutation,
+  Subscription,
   User,
-  Link
+  Link,
+  Vote,
 }
 
 const fs = require('fs');
