@@ -5,7 +5,15 @@ const { PrismaClient } = require("@prisma/client")
 const prisma = new PrismaClient()
 
 // 3
+// Define an async function called main to SEND queries to the database.
+// You will write all your queries inside this function.
 async function main() {
+  const newLink = await prisma.link.create({
+    data: {
+        description: 'Fullstack tutorial for GraphQL',
+        url: 'www.howtographql.com',
+    },
+  })
   const allLinks = await prisma.link.findMany()
   console.log(allLinks)
 }
